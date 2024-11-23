@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <h2>To-do list</h2>
+    <div class="parent">
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button id="addbtn"><i class='bx bx-plus'></i></button>
+    </div>
+
+    <ul id="listItems">
+    </ul>
+
+
+
+    <script>
+        taskInput = document.getElementById("taskInput");
+        addbtn = document.getElementById("addbtn");
+        listItems = document.getElementById("listItems")
+
+
+
+
+        addbtn.addEventListener("click", () => {
+            const enteredTask = taskInput.value;
+            const list = document.createElement("li")
+            list.textContent = enteredTask
+            list.style.marginBottom = "20px"
+            list.style.backgroundColor = "antiquewhite"
+            list.style.padding = "10px"
+            list.style.borderRadius = "5px"
+            list.style.width = "max-content"
+
+
+            if (enteredTask == "") {
+                alert("Enter a task")
+            }
+            else {
+
+                listItems.style.padding = "10px"
+                // listItems.style.width = "max-content"
+
+
+
+
+
+                const tick = document.createElement("button")
+                const tickIcon = document.createElement("i");
+                tickIcon.className = "bx bx-check";
+                tick.appendChild(tickIcon);
+                tick.style.marginLeft = "30px"
+                tick.style.marginRight = "20px"
+                tick.style.padding = "5px"
+                tick.style.borderRadius = "5px"
+                tick.style.backgroundColor = "rgb(33, 131, 33)"
+                tick.style.border = "none"
+                tick.style.color = "white"
+                tick.addEventListener("click", () => {
+                    list.style.textDecoration = "line-through";
+                    tick.disabled = true
+
+                })
+
+
+                const dltbtn = document.createElement("button")
+                const dltIcon = document.createElement("i");
+                dltIcon.className = "bx bx-trash"; // Boxicon class for a trash bin
+                dltbtn.appendChild(dltIcon);
+                dltbtn.style.padding = "5px"
+                dltbtn.style.borderRadius = "5px"
+                dltbtn.style.backgroundColor = "red"
+                dltbtn.style.border = "none"
+                dltbtn.style.color = "white"
+                dltbtn.style.marginLeft = "20px"
+                dltbtn.addEventListener("click", () => {
+                    listItems.removeChild(list)
+                })
+                // if(listItems.querySelectorAll("list").length==0){
+                //     listItems.style.backgroundColor=""
+                // }
+
+                list.appendChild(tick)
+                list.appendChild(dltbtn);
+                listItems.appendChild(list)
+                taskInput.value = ""
+            }
+        }
+
+
+
+        )
+
+
+
+
+
+    </script>
+</body>
+
+</html>

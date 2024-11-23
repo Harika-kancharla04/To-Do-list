@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    list-style-type: none;
+    
+
+}
+body{
+    background: url("https://wallpaperboat.com/wp-content/uploads/2021/04/12/74363/book-and-coffee-01.jpg") no-repeat center;
+    background-size: cover;
+    height: 95vh;
+    justify-items: center;
+    align-content: center;
+}
+h2{
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.parent{
+    
+    padding: 15px;
+    border-radius: 5px;
+    width: max-content;
+    background-color:rgb(222, 201, 172);
+
+}
+#taskInput{
+    border-radius: 5px;
+    border:1px solid black;
+    font-size:20px;
+}
+#addbtn{
+    background-color: rgb(33, 131, 33);
+    border-radius: 5px;
+    font-size: 20px;
+    color: antiquewhite;
+    border: none;
+}
